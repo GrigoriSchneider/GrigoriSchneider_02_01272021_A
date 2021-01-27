@@ -1,0 +1,477 @@
+.header{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    // grid-template-rows: 1fr 1fr;
+
+    &__logo{
+        margin-left: 1.5rem;
+    }
+    &__signup{
+        justify-self: end;
+        align-self: center;
+        margin-right: 2rem;
+
+        button{
+            @extend %button;
+            color:$color-activ;
+            font-weight: 600;
+        }
+    }
+    &__nav{
+        margin-top: 1rem;
+        display: grid;
+        grid-column: 1/3;
+        grid-template-columns: repeat(2, minmax(187px, 2fr));
+
+        &-btn{
+            @extend %button;
+            
+            border-bottom: 2px solid $color-secondary;
+            padding-bottom: 1rem;
+            .activ{
+                border-bottom: $color-activ;
+            }
+        }
+    }
+    
+}
+.activ{
+    border-bottom: 2px solid $color-activ;
+}
+
+.filter{
+    margin: .5rem 1rem 2rem ;
+    display: grid;
+    row-gap: 1.5rem;
+
+    h1{
+        font-weight: 600;
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+        
+    }
+    
+    &__input{
+        input{
+            margin: -.3rem;
+            padding: .5rem 1.5rem  .45rem ;
+            border: 2px solid $color-secondary;
+            border-right: none;
+        }
+        .icon-map{
+            padding: .5rem 1rem .6rem;
+            background-color: $color-secondary;
+            border-top-left-radius: .5rem;
+            border-bottom-left-radius: .5rem;
+        }
+        .icon-search{
+            margin-left: -.2rem;
+            padding: .5rem .7rem .6rem;
+            background-color: $color-activ;
+            color:white;
+            border-radius: .5rem;
+        }
+         
+    }
+    // Container Buttons Filter
+    &__buttons{
+
+        display: grid;
+        grid-gap: 1.2rem;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) ;
+        grid-template-rows: .7fr 1fr 1fr; 
+        
+        @media only screen and (min-width: $ipad){
+            grid-template-rows: .7fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        }
+
+      
+    }
+
+        h4{
+            grid-column: 1/-1;
+            font-size: 1.2rem;
+        }
+    
+    &__btn{
+        background-color: transparent;
+        font-size: .8rem;
+        border: none;
+        padding: .1rem .6rem 0.2rem;
+        margin-left: -1rem;
+        &-container{
+            
+            height: 2.6rem;
+            border: 2px solid $color-secondary;
+            border-radius: 2rem;
+        }
+
+
+    }
+    &__icon{
+        padding: 1rem 1rem 1rem;
+        background-color: $color-activ-light;
+        color: $color-activ;
+        border-radius: 5rem;
+        margin-left: -.3rem;
+        margin-right: .5rem;
+        margin-top: -.2rem;
+    }
+
+    &__info{
+        display: grid;
+        grid-template-columns: 2.3rem 1fr;
+        grid-gap: 1rem;
+        
+        .icon-info{
+            padding: .5rem .75rem .4rem;
+            border: solid 2px $color-secondary;
+            border-radius: 3rem;
+            color: $color-activ;
+        }
+    }
+
+}
+// Screen container $screen: 1366px;
+.container{
+    @media only screen and (min-width: $screen){
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    @media only screen and (min-width: $bigscreen){
+        grid-template-columns: 3fr 1.5fr;
+    }
+}
+
+// Section: Popular
+.popular{
+    
+
+    background-color: $color-grey;
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 6rem;
+    grid-gap: 1rem;
+
+    @media only screen and (min-width: $ipad){
+     grid-template-rows: 6rem repeat(3, minmax(230px, 270px));
+        
+    }
+   
+
+    @media only screen and (min-width: $screen){
+        grid-column: 2/3;
+
+        grid-template-rows: 6rem repeat(autofit (1fr));
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-left: 1rem;
+        grid-gap: 1.5rem;
+    }
+    @media only screen and (min-width: $bigscreen){
+        border-radius: 2rem;
+        margin-right: 1rem;
+        padding-left: 0;
+    }
+
+
+    &__header {
+        margin: 1rem 2rem 1rem;
+        font-size: 1.2rem;
+        @media only screen and (min-width: $ipad){
+            align-self: center;
+        }
+        
+    }
+    &__chart{
+        margin: 1rem 2rem 1rem;
+        font-size: 1.7rem;
+    }
+
+    // Card
+    &__card{
+        margin-left: 1rem;
+        margin-right: 1rem;
+        border-radius: 1.5rem;
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-columns: 1.2fr 1.8fr;
+        grid-template-rows: 145px;
+
+        @media only screen and (min-width: $ipad){
+            grid-template-columns: 2fr 1.4fr;
+            grid-template-rows: 1fr;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            
+        }
+        @media only screen and (min-width: $screen){
+            grid-template-columns: 1.5fr 1.5fr;
+        }
+       
+        background-color: white;
+
+        .card__img {
+            width: 83%;
+            height: 85%;
+            margin: 1rem;
+            object-fit: cover;
+            border-top-left-radius: 1.3rem;
+            border-bottom-left-radius: 1.3rem;
+            
+            // place-self: center;
+
+            @media only screen and (min-width: $ipad){
+                width: 90%;
+                height: 85%;
+                margin: 1.5rem;
+
+        
+            }
+            @media only screen and (min-width: $screen){
+                width: 85%;
+                height: 85%;
+                
+            }
+            
+        }
+        
+        .card__content{
+            display: grid;
+            grid-template-rows: 1.5fr 2fr .6fr;
+            grid-gap: 1rem;
+
+            margin: 1rem 1rem .5rem;
+            @media only screen and (min-width: $ipad){
+                grid-template-rows: 80px 100px 30px;
+            }
+        }
+        
+        
+
+    }
+
+}
+// Stars
+.star--activ{
+    color: $color-activ
+}
+.star--grey{
+    color: $color-star-grey;
+}
+
+// Section Marseille
+
+.marseille{
+    
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    @media only screen and (min-width: $ipad){
+        display: grid;
+        grid-template-columns: 1fr  1fr;
+        grid-template-rows: 3rem 1fr 1fr ;
+    }
+    @media only screen and (min-width: $screen){
+        grid-column: 1/2;
+        grid-row: 1/2;
+
+        grid-template-rows: 4rem repeat(3, 1fr) 3rem;
+        grid-gap: 1rem;
+        padding-left: 1rem;
+
+    }
+    @media only screen and (min-width: $bigscreen){
+        grid-template-rows: 4rem repeat(2, 1fr) 3rem;
+        grid-template-columns: 1fr  1fr 1fr;
+        grid-gap: .5rem;
+        background-color: $color-grey;
+        border-radius: 2rem;
+        margin-left: 1rem;
+    }
+    
+
+    h2{
+        margin-left: 1rem;
+
+        @media only screen and (min-width: $ipad){
+            grid-column: 1/-1;
+        }
+    }
+    &__card{
+        box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.75);
+        background-color: white;
+        display: grid;
+        grid-template-rows: 120px 80px;
+        margin: 1rem;
+        border-radius: 1.5rem;
+
+        @media only screen and (min-width: $ipad){
+            grid-template-rows: 180px 80px;
+        }
+
+        @media only screen and (min-width: $ipad){
+            grid-template-rows: 245px 80px;
+        }
+        
+        img{
+            width: 90%;
+            height: 80%;
+            object-fit: cover;
+            margin: 1rem 1rem 0;
+            border-top-left-radius: 1.3rem;
+            border-top-right-radius: 1.3rem;
+        }
+
+        .card__content{
+            display: grid;
+            grid-template-rows: 1.2fr .7fr 1.3fr;
+            margin-left: 2rem;
+        }
+    }
+
+    button{
+        @extend %button;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+}
+
+// Section Activities
+.activities{
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    display: grid;
+    grid-row-gap: 1.5rem;
+    grid-template-rows: 4rem repeat(6, 1fr);
+    @media only screen and (min-width: $ipad){
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows:  4rem repeat(4, 1fr)
+    }
+    @media only screen and (min-width: $bigscreen){
+        grid-template-columns: repeat(4 , 1fr);
+        grid-template-rows:  4rem repeat(2, 1fr);
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+
+    h2{
+        margin-left: 1rem;
+        align-self: center;
+
+        @media only screen and (min-width: $ipad){
+        grid-column: 1/-1;
+        }
+    }
+
+    &__card{
+        box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.75);
+        border-radius: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        
+        display: grid;
+        grid-template-rows: 135px 55px;
+
+      
+
+        img{
+            width: 100%;
+            height: 135px;
+            object-fit: cover;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 2rem;
+
+            @media only screen and (min-width: $ipad){
+                // height: 200px;
+            }
+        }
+        h3{
+            margin: 2rem;
+            align-self: center;
+        }
+    }
+
+    // overwrite rules for card-1 and card-4 with img
+    .card-1{
+        @media only screen and (min-width: $ipad){
+            grid-row: 2/4;
+
+            grid-template-rows: 3fr 1fr;
+
+            img{
+                height: 80%;
+            }
+        }
+        
+    }
+    
+    .card-4{
+        @media only screen and (min-width: $ipad){
+            grid-row: 4/6;
+            grid-column: 2/3;
+
+            grid-template-rows: 3fr 1fr;
+
+            img{
+                height: 80%;
+            }
+        }  
+        @media only screen and (min-width: $bigscreen){
+            grid-column: 3/4;
+            grid-row: 2/4;
+        }     
+    }
+   
+}
+
+// Footer
+footer{
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-bottom: 3rem;
+    background-color: $color-star-grey;
+    display: grid;
+    grid-gap: 1rem;
+
+    @media only screen and (min-width: $ipad){
+        grid-template-columns: 1fr 1fr ;
+        grid-row-gap: 1.5rem;
+    }
+    @media only screen and (min-width: $ipadpro){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    h2{
+        margin-bottom: 1rem
+    }
+    
+    button {
+        @extend %button;
+    }
+    .about {
+        display: grid;
+        grid-template-rows:  repeat(3, 1fr);
+        justify-items: start;
+        grid-gap: .5rem;
+    }
+    .accommodations{
+        display: grid;
+        grid-template-rows:  repeat(3, 1fr);
+        justify-items: start;
+        grid-gap: .5rem;
+    }
+    .assistance{
+        display: grid;
+        grid-template-rows:  repeat(3, 1fr);
+        justify-items: start;
+        grid-gap: .5rem;
+    }
+
+}
