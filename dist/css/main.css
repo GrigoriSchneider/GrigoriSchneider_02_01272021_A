@@ -16,6 +16,9 @@ input[type=text] {
 body {
   font-family: Raleway;
   font-size: 16px; }
+  @media only screen and (min-width: 768px) {
+    body {
+      font-size: 20px; } }
 
 .header {
   margin-top: 1rem;
@@ -24,6 +27,11 @@ body {
   grid-template-columns: repeat(2, minmax(150px, 1fr)); }
   .header__logo {
     margin-left: 1.5rem; }
+    .header__logo img {
+      height: 3rem; }
+      @media only screen and (min-width: 768px) {
+        .header__logo img {
+          height: 4rem; } }
   .header__signup {
     justify-self: end;
     align-self: center;
@@ -58,11 +66,17 @@ body {
     padding: .5rem 1.5rem  .45rem;
     border: 2px solid #DEEBFF;
     border-right: none; }
+    @media only screen and (min-width: 768px) {
+      .filter__input input {
+        padding: .75rem 1.5rem  .45rem; } }
   .filter__input .icon-map {
     padding: .5rem 1rem .6rem;
     background-color: #DEEBFF;
     border-top-left-radius: .5rem;
     border-bottom-left-radius: .5rem; }
+    @media only screen and (min-width: 768px) {
+      .filter__input .icon-map {
+        font-size: 1.4rem; } }
   .filter__input .icon-search {
     margin-left: -.2rem;
     padding: .5rem .7rem .6rem;
@@ -87,6 +101,9 @@ body {
     border: none;
     padding: .1rem .6rem 0.2rem;
     margin-left: -1rem; }
+    @media only screen and (min-width: 768px) {
+      .filter__btn {
+        font-size: 0.9rem; } }
     .filter__btn-container {
       height: 2.6rem;
       border: 2px solid #DEEBFF;
@@ -116,25 +133,19 @@ body {
 
 @media only screen and (min-width: 1600px) {
   .container {
-    grid-template-columns: 3fr 1.5fr; } }
+    grid-template-columns: 3fr 1.5fr;
+    grid-column-gap: 2rem; } }
 
 .popular {
   background-color: #f2f2f2;
   padding-bottom: 2rem;
   display: grid;
   grid-template-columns: 1fr 6rem;
+  grid-template-rows: 3rem repeat(3, 200px);
   grid-gap: 1rem; }
   @media only screen and (min-width: 768px) {
     .popular {
       grid-template-rows: 6rem repeat(3, minmax(230px, 270px)); } }
-  @media only screen and (min-width: 1366px) {
-    .popular {
-      grid-column: 2/3;
-      grid-template-rows: 6rem repeat(autofit 1fr);
-      padding-left: 1rem;
-      padding-right: 1rem;
-      margin-left: 1rem;
-      grid-gap: 1.5rem; } }
   @media only screen and (min-width: 1600px) {
     .popular {
       border-radius: 2rem;
@@ -154,43 +165,53 @@ body {
     margin-right: 1rem;
     border-radius: 1.5rem;
     grid-column: 1/-1;
-    display: grid;
-    grid-template-columns: 1.2fr 1.8fr;
-    grid-template-rows: 145px;
+    display: flex;
+    flex-wrap: wrap;
     background-color: white; }
     @media only screen and (min-width: 768px) {
       .popular__card {
-        grid-template-columns: 2fr 1.4fr;
-        grid-template-rows: 1fr;
         margin-left: 2rem;
         margin-right: 2rem; } }
     @media only screen and (min-width: 1366px) {
       .popular__card {
-        grid-template-columns: 1.5fr 1.5fr; } }
+        flex-direction: column;
+        justify-content: space-around;
+        margin-left: 1rem;
+        margin-right: 1rem; } }
     .popular__card .card__img {
-      width: 83%;
-      height: 85%;
-      margin: 1rem;
+      width: 40%;
+      height: 90%;
+      align-self: center;
+      margin-left: .5rem;
       object-fit: cover;
       border-top-left-radius: 1.3rem;
       border-bottom-left-radius: 1.3rem; }
       @media only screen and (min-width: 768px) {
         .popular__card .card__img {
-          width: 90%;
+          width: 55%;
           height: 85%;
-          margin: 1.5rem; } }
+          margin-left: 1rem; } }
       @media only screen and (min-width: 1366px) {
         .popular__card .card__img {
-          width: 85%;
+          width: 40%;
           height: 85%; } }
     .popular__card .card__content {
-      display: grid;
-      grid-template-rows: 1.5fr 2fr .6fr;
-      grid-gap: 1rem;
-      margin: 1rem 1rem .5rem; }
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; }
       @media only screen and (min-width: 768px) {
         .popular__card .card__content {
-          grid-template-rows: 80px 100px 30px; } }
+          margin-left: 4rem; } }
+      @media only screen and (min-width: 1366px) {
+        .popular__card .card__content {
+          margin-left: 1rem; } }
+      @media only screen and (min-width: 1366px) {
+        .popular__card .card__content h3 {
+          margin-bottom: 3.5rem; } }
+      @media only screen and (min-width: 1366px) {
+        .popular__card .card__content .card__stars {
+          margin-top: 1.5rem; } }
 
 .star--activ {
   color: #0065FC; }
@@ -200,22 +221,24 @@ body {
 
 .marseille {
   padding-top: 3rem;
-  padding-bottom: 3rem; }
+  padding-bottom: 3rem;
+  display: grid;
+  grid-template-rows: 3rem repeat(6, 280px) 2rem; }
   @media only screen and (min-width: 768px) {
     .marseille {
       display: grid;
       grid-template-columns: 1fr  1fr;
-      grid-template-rows: 3rem 1fr 1fr; } }
+      grid-template-rows: 3rem 350px 350px  350px 3rem; } }
   @media only screen and (min-width: 1366px) {
     .marseille {
       grid-column: 1/2;
       grid-row: 1/2;
-      grid-template-rows: 4rem repeat(3, 1fr) 3rem;
+      grid-template-rows: 4rem repeat(3, 370px) 3rem;
       grid-gap: 1rem;
       padding-left: 1rem; } }
   @media only screen and (min-width: 1600px) {
     .marseille {
-      grid-template-rows: 4rem repeat(2, 1fr) 3rem;
+      grid-template-rows: 4rem repeat(2, 370px) 3rem;
       grid-template-columns: 1fr  1fr 1fr;
       grid-gap: .5rem;
       background-color: #f2f2f2;
@@ -229,9 +252,10 @@ body {
   .marseille__card {
     box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.75);
     background-color: white;
-    display: grid;
-    grid-template-rows: 120px 80px;
     margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     border-radius: 1.5rem; }
     @media only screen and (min-width: 768px) {
       .marseille__card {
@@ -241,15 +265,16 @@ body {
         grid-template-rows: 245px 80px; } }
     .marseille__card img {
       width: 90%;
-      height: 80%;
+      height: 57%;
       object-fit: cover;
-      margin: 1rem 1rem 0;
+      align-self: center;
       border-top-left-radius: 1.3rem;
       border-top-right-radius: 1.3rem; }
     .marseille__card .card__content {
-      display: grid;
-      grid-template-rows: 1.2fr .7fr 1.3fr;
-      margin-left: 2rem; }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 1.5rem; }
   .marseille button {
     margin-top: 1rem;
     margin-left: 1rem;

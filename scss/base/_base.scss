@@ -12,4 +12,7 @@ input[type=text]{
 body{
     font-family: $font-primary;
     font-size: 16px;
+    @media only screen and (min-width: $ipad){
+        font-size: 20px;
+    }
 }
