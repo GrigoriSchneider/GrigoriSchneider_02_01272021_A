@@ -3,6 +3,10 @@
     margin-bottom: 1rem;
     display: grid;
     grid-template-columns: repeat(2, minmax(150px, 1fr));
+
+    @media only screen and (min-width: $screen){
+        grid-template-columns: 1fr 20rem 15rem;
+    }
     // grid-template-rows: 1fr 1fr;
 
     &__logo{
@@ -20,6 +24,10 @@
         align-self: center;
         margin-right: 2rem;
 
+        @media only screen and (min-width: $screen){
+            grid-column:3/4;
+        }
+
         button{
             @extend %button;
             color:$color-activ;
@@ -32,13 +40,26 @@
         grid-column: 1/3;
         grid-template-columns: repeat(2, minmax(187px, 2fr));
 
+        @media only screen and (min-width: $screen){
+            grid-column:2/3;
+            grid-row: 1/2;
+
+        }
+
         &-btn{
             @extend %button;
             
             border-bottom: 2px solid $color-secondary;
             padding-bottom: 1rem;
+            @media only screen and (min-width: $screen){
+                border-bottom: none;
+            }
+            
             .activ{
                 border-bottom: $color-activ;
+            }
+            a{
+                text-decoration: none;
             }
         }
     }
@@ -46,6 +67,11 @@
 }
 .activ{
     border-bottom: 2px solid $color-activ;
+    @media only screen and (min-width: $screen){
+        border-top: 2px solid $color-activ;
+        border-bottom: none;
+        
+    }
 }
 
 .filter{
@@ -124,6 +150,13 @@
             height: 2.6rem;
             border: 2px solid $color-secondary;
             border-radius: 2rem;
+
+            &:hover{
+                background-color:$color-activ; 
+                button{
+                    color: white;
+                }
+            }
         }
 
 
@@ -182,6 +215,8 @@
    
 
     @media only screen and (min-width: $screen){
+        border-radius: 2rem;
+        margin-right: 1rem;
         // grid-column: 2/3;
 
         // grid-template-rows: 6rem repeat(autofit (1fr));
@@ -192,8 +227,8 @@
         
     }
     @media only screen and (min-width: $bigscreen){
-        border-radius: 2rem;
-        margin-right: 1rem;
+       
+        
         padding-left: 0;
     }
 
@@ -332,10 +367,14 @@
     @media only screen and (min-width: $screen){
         grid-column: 1/2;
         grid-row: 1/2;
+        background-color: $color-grey;
 
         grid-template-rows: 4rem repeat(3, 370px) 3rem;
         grid-gap: 1rem;
         padding-left: 1rem;
+        border-radius: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
 
     }
     @media only screen and (min-width: $bigscreen){
@@ -343,8 +382,7 @@
         grid-template-columns: 1fr  1fr 1fr;
         grid-gap: .5rem;
         background-color: $color-grey;
-        border-radius: 2rem;
-        margin-left: 1rem;
+    
     }
     
 

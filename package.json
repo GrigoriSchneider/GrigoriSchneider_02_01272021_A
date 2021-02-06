@@ -1,5 +1,5 @@
 {
-  "name": "Reservia_Project_02",
+  "name": "reservia_project_02",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,18 @@
   "license": "ISC",
   "dependencies": {
     "node-sass": "^4.12.0",
-    "sass": "^1.32.5",
-    "gh-pages": "^1.2.0"
+    "sass": "^1.32.5"
   },
-  "description": ""
+  "description": "Github Repo:\r https://github.com/GrigoriSchneider/GrigoriSchneider_02_01272021_A",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrigoriSchneider/GrigoriSchneider_02_01272021_A.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GrigoriSchneider/GrigoriSchneider_02_01272021_A/issues"
+  },
+  "homepage": "https://github.com/GrigoriSchneider/GrigoriSchneider_02_01272021_A#readme",
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
+  }
 }
