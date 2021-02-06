@@ -25,9 +25,10 @@
     <div class="header__signup">
       <button>Sign up</button>
     </div>
-    <nav class="header__nav">
-      <button class="header__nav-btn activ">Accommodations</button>
-      <button class="header__nav-btn">Activities</button>
+    <nav class="header__nav" id="header__nav">
+      <button class="header__nav-btn activ"><a href="#accommodations">Accommodations</a>
+      </button>
+      <button class="header__nav-btn"><a href="#activities">Activities</a> </button>
     </nav>
   </header>
 
@@ -135,7 +136,7 @@
 
     <!-- Section: Marseille -->
 
-    <div class="marseille">
+    <div class="marseille" id="accommodations">
       <h2>Accommodations in Marseille</h2>
 
       <!-- card 1 -->
@@ -242,7 +243,7 @@
 
   <!-- Section Activities -->
 
-  <div class="activities">
+  <div class="activities" id="activities">
     <h2>Activities in Marseille</h2>
 
     <!-- card 1 -->
@@ -304,6 +305,23 @@
       <button>Contact Us</button>
     </div>
   </footer>
+
+  <script>
+    // Get the container element
+    var btnContainer = document.getElementById("header__nav");
+
+    // Get all buttons with class="btn" inside the container
+    var btns = btnContainer.getElementsByClassName("header__nav-btn");
+
+    // Loop through the buttons and add the active class to the current/clicked button
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("activ");
+        current[0].className = current[0].className.replace(" activ", "");
+        this.className += " activ";
+      });
+    } 
+  </script>
 
 
 </body>
