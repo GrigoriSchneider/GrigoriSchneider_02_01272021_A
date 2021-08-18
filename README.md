@@ -1,12 +1,12 @@
 # Skills 
 
-⋅⋅* Track a code project with version control on GitHub
++ Track a code project with version control on GitHub
 
-⋅⋅* Set up a development environment
++ Set up a development environment
 
-⋅⋅* Integrate web content according to a mockup using HTML & CSS
++ Integrate web content according to a mockup using HTML & CSS
 
-⋅⋅* Implement a responsive layout
++ Implement a responsive layout
 
 
 
